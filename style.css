@@ -88,3 +88,17 @@ body {
 .love-letter p:last-child {
   margin-bottom: 0;
 }
+
+.image-container {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px; /* Adjust the margin-top as needed */
+}
+
+.rounded-image {
+    width: 200px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    border-radius: 20px; /* Adjust the border radius as needed */
+    border: 2px solid #ccc; /* Adjust the border color and thickness as needed */
+}
