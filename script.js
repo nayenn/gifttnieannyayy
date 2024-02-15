@@ -1,11 +1,12 @@
 var titleVisible = false;
+var imagesVisible = false;
 
 function toggleTitle() {
     var title = document.getElementById("title");
     var heart = document.querySelector('.heart');
     var body = document.querySelector('body');
-    var paper = document.querySelector('.paper');
-  
+    var imageContainer = document.getElementById("imageContainer");
+
     titleVisible = !titleVisible;
 
     if (titleVisible) {
@@ -14,13 +15,17 @@ function toggleTitle() {
     } else {
         title.style.opacity = "0";
         body.style.backgroundColor = "transparent";
+        if (!imagesVisible) {
+            imageContainer.style.display = "flex"; // Show images only if they were initially hidden
+        }
     }
-  
+
     heart.style.opacity = "0";
-    paper.style.display = "block";
+    toggleImages(); // Toggle the image visibility along with the title
 }
 
-function togglePaper() {
-    var paper = document.querySelector('.paper');
-    paper.style.display = (paper.style.display === 'block') ? 'none' : 'block';
+function toggleImages() {
+    var imageContainer = document.getElementById("imageContainer");
+    imagesVisible = !imagesVisible;
+    imageContainer.style.display = imagesVisible ? 'flex' : 'none';
 }
