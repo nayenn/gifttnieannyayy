@@ -12,10 +12,10 @@ body {
 .title {
   text-align: center;
   color: #E8FFFE; 
-  margin-top: 20px;
+  margin-top: 50px;
   opacity: 0; 
   position: absolute;
-  top: 20px; 
+  top: 170px; 
   left: 50%;
   transform: translateX(-50%);
   font-size: 30px;
