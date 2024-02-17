@@ -7,7 +7,7 @@ body {
     min-height: 100vh;
     background-color: #0b1522;
     transition: background-color 2s ease;
-    position: relative; /* Add position relative to the body */
+    position: relative;
 }
 
 .title {
@@ -95,10 +95,10 @@ body {
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 10px;
-    margin-top: 20px;
-    position: absolute; /* Position the left images */
-    left: 10px; /* Adjust the left position as needed */
-    top: 0; /* Align to the top of the body */
+    margin-top: auto; 
+    position: absolute;
+    bottom: 20px;
+    left: 20px; 
 }
 
 .right {
@@ -106,10 +106,10 @@ body {
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 10px;
-    margin-top: 20px;
-    position: absolute; /* Position the right images */
-    right: 10px; /* Adjust the right position as needed */
-    top: 0; /* Align to the top of the body */
+    margin-top: auto; 
+    position: absolute;
+    bottom: 20px; 
+    right: 20px; 
 }
 
 .left img,
