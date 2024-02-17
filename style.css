@@ -4,7 +4,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 200vh;
+    min-height: 100vh; /* Adjusted to 100vh */
     background-color: #0b1522;
     transition: background-color 2s ease;
 }
@@ -123,7 +123,6 @@ body {
 .right img {
     width: 100px;
     height: 100px;
-    border: 2px solid #d3d3d3; /* Light grey border */
+    border: 2px solid #d3d3d3;
     border-radius: 10px;
 }
-
