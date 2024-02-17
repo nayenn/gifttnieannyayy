@@ -4,7 +4,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Adjusted to 100vh */
+    min-height: 100vh;
     background-color: #0b1522;
     transition: background-color 2s ease;
 }
@@ -103,27 +103,14 @@ body {
     justify-content: flex-end;
     gap: 10px;
     margin-top: 20px;
-    left: 50px
-}
-
-.combined-image-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.combined-image-container .combined-image img {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
+    left: 50px;
 }
 
 .left img,
 .right img {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 200px;
     border: 2px solid #d3d3d3;
-    border-radius: 10px;
+    border-radius: 20px;
+    object-fit: cover; /
 }
