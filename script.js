@@ -1,5 +1,6 @@
 var titleVisible = false;
 var paperVisible = false;
+var heartClicked = false;
 
 function toggleTitle() {
     var title = document.getElementById("title");
@@ -9,24 +10,17 @@ function toggleTitle() {
     var loveLetter = document.getElementById("loveLetter");
     var imageContainer = document.querySelector('.image-container');
 
-    titleVisible = !titleVisible;
-
-    if (titleVisible) {
-        title.style.opacity = "1";
-        body.style.backgroundColor = "#e8d4bb";
-        paper.style.display = "none"; // Hide paper when title is shown
-        imageContainer.style.display = "flex"; // Show image container
-    } else {
-        title.style.opacity = "0";
-        body.style.backgroundColor = "transparent";
-        if (!paperVisible) {
-            paper.style.display = "block"; // Show paper only if it was initially hidden
-            imageContainer.style.display = "none"; // Hide image container
-        }
+    if (!heartClicked) {
+        heart.style.display = "none";
+        heartClicked = true;
     }
 
-    heart.style.opacity = "0";
-    togglePaper(); // Toggle the love letter visibility along with the title
+    titleVisible = true;
+
+    title.style.opacity = "1";
+    body.style.backgroundColor = "#e8d4bb";
+    paper.style.display = "block";
+    imageContainer.style.display = "flex";
 }
 
 function togglePaper() {
