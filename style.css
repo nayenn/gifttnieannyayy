@@ -1,10 +1,10 @@
-body {
+ body {
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 400vh;
     background-color: #0b1522;
     transition: background-color 2s ease;
     position: relative;
@@ -94,7 +94,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     position: absolute;
     bottom: 20px;
@@ -105,12 +105,37 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-end;
     gap: 10px;
     position: absolute;
     bottom: 20px;
     right: 20px;
 }
+
+.right img {
+    width: 140px;
+    height: 200px;
+    border: 2px solid #d3d3d3;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.right .horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.right .vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 10px;
+}
+
 
 .combined-image-container {
     display: flex;
@@ -126,8 +151,8 @@ body {
 .left img,
 .right img,
 .combined-image-container img {
-    width: 140px;
-    height: 200px;
+    width: 240px;
+    height: 300px;
     border: 2px solid #d3d3d3;
     border-radius: 20px;
     object-fit: cover;
