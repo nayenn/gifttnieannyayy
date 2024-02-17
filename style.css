@@ -113,12 +113,28 @@ body {
 }
 
 .left img,
-.right img,
+.right img {
+    width: 140px;
+    height: 200px;
+    border: 2px solid #d3d3d3;
+    border-radius: 20px; /* Rounded rectangle border */
+    object-fit: cover;
+}
+
+.combined-image-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .combined-image-container img {
     width: 140px;
     height: 200px;
     border: 2px solid #d3d3d3;
-    border-radius: 20px;
+    border-radius: 20px; /* Rounded rectangle border */
     object-fit: cover;
 }
-
