@@ -113,7 +113,8 @@ body {
 }
 
 .left img,
-.right img {
+.right img,
+.combined-image-container img {
     width: 140px;
     height: 200px;
     border: 2px solid #d3d3d3;
