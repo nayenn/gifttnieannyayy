@@ -89,7 +89,6 @@ body {
   margin-bottom: 0;
 }
 
-/* Style for left image container */
 .left {
     display: flex;
     flex-wrap: wrap;
@@ -98,7 +97,6 @@ body {
     margin-top: 20px;
 }
 
-/* Style for right image container */
 .right {
     display: flex;
     flex-wrap: wrap;
