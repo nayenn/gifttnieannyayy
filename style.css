@@ -22,6 +22,30 @@
     font-size: 30px;
 }
 
+.title::before,
+.title::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    background-color: #e8fffe; /* Light blue color */
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.title::before {
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title::after {
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 .heart {
     height: 70px;
     width: 70px;
