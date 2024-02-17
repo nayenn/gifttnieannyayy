@@ -112,19 +112,13 @@ body {
     transform: translateY(-50%);
 }
 
-.combined-image-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+.left img,
+.right img,
+.combined-image-container img {
+    width: 140px;
+    height: 200px;
+    border: 2px solid #d3d3d3;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
-.combined-image-container .combined-image img {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-}
