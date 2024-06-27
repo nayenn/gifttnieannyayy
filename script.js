@@ -1,30 +1,43 @@
-var titleVisible = false;
-var paperVisible = false;
-var heartClicked = false;
+document.addEventListener('DOMContentLoaded', (event) => {
+  const button = document.querySelector('button.learn-more');
+  const largePolaroidContainers = document.querySelectorAll('.large-polaroid-container .large-polaroid');
+  const largeCaption = document.getElementById('large-caption-1');
+  const smallPolaroidContainer = document.querySelector('.small-polaroid-container');
+  const smallPolaroids = document.querySelectorAll('.small-polaroid-container .polaroid');
 
-function toggleTitle() {
-    var title = document.getElementById("title");
-    var heart = document.querySelector('.heart');
-    var body = document.querySelector('body');
-    var paper = document.querySelector('.paper');
-    var loveLetter = document.getElementById("loveLetter");
-    var imageContainer = document.querySelector('.image-container');
+  button.addEventListener('click', function() {
+    this.style.transform = 'scale(0)';
+    this.style.opacity = '0';
 
-    if (!heartClicked) {
-        heart.style.display = "none";
-        heartClicked = true;
-    }
+    setTimeout(() => {
+      this.style.display = 'none';
+      largePolaroidContainers.forEach(polaroid => {
+        polaroid.parentNode.style.display = 'flex';
+        setTimeout(() => {
+          polaroid.style.opacity = '1';
+        }, 10);
+      });
+      largeCaption.style.opacity = '1';
+    }, 500);
+  });
 
-    titleVisible = true;
+  largePolaroidContainers.forEach(polaroid => {
+    polaroid.addEventListener('click', function() {
+      polaroid.style.opacity = '0';
+      largeCaption.style.opacity = '0';
 
-    title.style.opacity = "1";
-    body.style.backgroundColor = "#e8d4bb";
-    paper.style.display = "block";
-    imageContainer.style.display = "flex";
-}
+      setTimeout(() => {
+        polaroid.parentNode.style.display = 'none';
+        smallPolaroidContainer.style.display = 'flex';
 
-function togglePaper() {
-    var paper = document.querySelector('.paper');
-    paperVisible = !paperVisible;
-    paper.style.display = paperVisible ? 'block' : 'none';
-}
+        setTimeout(() => {
+          smallPolaroids.forEach(smallPolaroid => {
+            smallPolaroid.style.width = '300px';
+            smallPolaroid.style.height = 'auto';
+            smallPolaroid.style.opacity = '1';
+          });
+        }, 10);
+      }, 500);
+    });
+  });
+});
