@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const smallPolaroidContainer = document.querySelector('.small-polaroid-container');
   const smallPolaroids = document.querySelectorAll('.small-polaroid-container .polaroid');
 
+  largeCaption.textContent = '';
+
   button.addEventListener('click', function() {
     this.style.transform = 'scale(0)';
     this.style.opacity = '0';
@@ -17,7 +19,32 @@ document.addEventListener('DOMContentLoaded', (event) => {
           polaroid.style.opacity = '1';
         }, 10);
       });
-      largeCaption.style.opacity = '1';
+
+      setTimeout(() => {
+        typeEffect(largeCaption, "Look Bebuu");
+
+        setTimeout(() => {
+          largePolaroidContainers.forEach(polaroid => {
+            const imgs = polaroid.querySelectorAll('.large-img');
+            imgs[0].classList.add('hidden');
+            imgs[1].classList.remove('hidden');
+          });
+          typeEffect(largeCaption, "This is literally us..");
+
+          setTimeout(() => {
+            typeEffect(largeCaption, "Anyways....");
+
+            setTimeout(() => {
+              largePolaroidContainers.forEach(polaroid => {
+                const imgs = polaroid.querySelectorAll('.large-img');
+                imgs[1].classList.add('hidden');
+                imgs[0].classList.remove('hidden');
+              });
+              typeEffect(largeCaption, "Press one of the polaroids, it'll have the same result dww");
+            }, 4000);
+          }, 4000);
+        }, 4000);
+      }, 1200); 
     }, 500);
   });
 
@@ -40,4 +67,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }, 500);
     });
   });
+
+  function typeEffect(element, newText) {
+    // Clear existing text
+    element.textContent = '';
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < newText.length) {
+        element.textContent += newText[index];
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 100); 
+  }
 });
