@@ -72,7 +72,7 @@ button.learn-more:active::before {
 .large-polaroid-container {
   display: none;
   flex-direction: row;
-  gap: 600px;
+  gap: 500px;
   text-align: center;
 }
 
@@ -90,6 +90,11 @@ button.learn-more:active::before {
 .polaroid img {
   width: 100%;
   height: auto;
+  transition: opacity 1s;
+}
+
+.polaroid img.hidden {
+  opacity: 0;
 }
 
 .polaroid:hover {
@@ -104,16 +109,19 @@ button.learn-more:active::before {
 
 .large-caption {
   font-size: 1.2em;
-  opacity: 0;
-  transition: opacity 0.5s;
+  opacity: 1; 
   text-align: center;
   margin-top: 20px;
+  white-space: nowrap; 
+  overflow: hidden; 
 }
+
+
 
 .small-polaroid-container {
   display: none;
   flex-direction: row;
-  gap: 300px;
+  gap: 200px;
   justify-content: center;
 }
 
