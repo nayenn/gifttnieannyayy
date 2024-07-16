@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
   function typeEffect(element, newText) {
-    // Clear existing text
     element.textContent = '';
     let index = 0;
     const interval = setInterval(() => {
