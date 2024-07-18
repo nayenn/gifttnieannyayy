@@ -212,9 +212,8 @@ button.learn-more:active::before {
 
 .large-polaroid-container {
   display: none;
-  flex-direction: row;
-  gap: 50px; /* Reduce gap to make it more centered */
-  text-align: center;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -233,16 +232,16 @@ button.learn-more:active::before {
 }
 
 .polaroid img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  transition: opacity 1s;
+  height: auto;
+  max-width: 300px; /* Ensures the images are not too big */
 }
 
 .polaroid img.hidden {
   opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .polaroid:hover {
@@ -251,7 +250,7 @@ button.learn-more:active::before {
 
 .large-polaroid {
   width: 300px;
-  height: 400px; /* Set a specific height to avoid content jumping */
+  height: auto; /* Allow the height to adjust based on the image */
   opacity: 0;
 }
 
