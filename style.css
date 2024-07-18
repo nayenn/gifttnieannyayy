@@ -140,76 +140,76 @@ button.learn-more:active::before {
   transform: translate3d(0, 0, -1em);
 }
 
-.large-polaroid-container {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, calc(-50% - 50px)); /* Center and move 50px above center */
-}
+    .large-polaroid-container {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, calc(-50% - 50px)); /* Center and move 50px above center */
+    }
 
-.polaroid {
-  position: relative;
-  padding: 10px 10px 30px;
-  border: 1px solid #BFBFBF;
-  background: white;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
-  text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-  transition: transform 0.3s, width 0.5s, height 0.5s, opacity 0.5s;
-}
+    .polaroid {
+      position: relative;
+      padding: 10px 10px 30px;
+      border: 1px solid #BFBFBF;
+      background: white;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+      text-align: center;
+      font-family: 'Courier New', Courier, monospace;
+      transition: transform 0.3s, width 0.5s, height 0.5s, opacity 0.5s;
+      display: inline-block;
+      vertical-align: top;
+    }
 
-.polaroid img {
-  width: 100%;
-  height: auto;
-  max-width: 300px; /* Ensures the images are not too big */
-}
+    .polaroid img {
+      width: 100%;
+      height: auto;
+      max-width: 300px;
+    }
 
-.polaroid img.hidden {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+    .polaroid img.hidden {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
 
-.polaroid:hover {
-  transform: scale(1.05);
-}
+    .polaroid:hover {
+      transform: scale(1.05);
+    }
 
-.large-polaroid {
-  width: 300px;
-  height: auto; /* Allow the height to adjust based on the image */
-  opacity: 0;
-}
+    .large-polaroid {
+      width: 300px;
+      height: auto;
+      opacity: 0;
+    }
 
-.large-caption {
-  font-size: 1.2em;
-  opacity: 1;
-  text-align: center;
-  margin-top: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-}
+    .large-caption {
+      font-size: 1.2em;
+      opacity: 1;
+      text-align: center;
+      margin-top: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
 
-.small-polaroid-container {
-  display: none;
-  flex-direction: row;
-  gap: 200px;
-  justify-content: center;
-}
+    .small-polaroid-container {
+      display: none;
+      flex-direction: row;
+      gap: 200px;
+      justify-content: center;
+    }
 
-.small-polaroid-container .polaroid {
-  width: 0;
-  height: 0;
-  opacity: 0;
-}
+    .small-polaroid-container .polaroid {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
 
-.caption {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  color: #333;
-}
+    .caption {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      color: #333;
+    }
