@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const smallPolaroidContainer = document.querySelector('.small-polaroid-container');
   const smallPolaroids = document.querySelectorAll('.small-polaroid-container .polaroid');
 
+  // Initialize large caption to empty initially
   largeCaption.textContent = '';
 
   button.addEventListener('click', function() {
@@ -69,6 +70,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
   function typeEffect(element, newText) {
+    // Clear existing text
     element.textContent = '';
     let index = 0;
     const interval = setInterval(() => {
