@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const smallPolaroidContainer = document.querySelector('.small-polaroid-container');
   const smallPolaroids = document.querySelectorAll('.small-polaroid-container .polaroid');
 
-  // Initialize large caption to empty initially
+  // Ensure the large caption is empty initially
   largeCaption.textContent = '';
 
   button.addEventListener('click', function() {
@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     setTimeout(() => {
       this.style.display = 'none';
+
+      // Display the large polaroid container
       largePolaroidContainers.forEach(polaroid => {
         polaroid.parentNode.style.display = 'flex';
         setTimeout(() => {
@@ -21,30 +23,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }, 10);
       });
 
+      // Display the "Look Bebuu" caption
       setTimeout(() => {
         typeEffect(largeCaption, "Look Bebuu");
 
+        // Transition the images after 4 seconds
         setTimeout(() => {
-          largePolaroidContainers.forEach(polaroid => {
-            const imgs = polaroid.querySelectorAll('.large-img');
-            imgs[0].classList.add('hidden');
-            imgs[1].classList.remove('hidden');
-          });
+          transitionImages();
           typeEffect(largeCaption, "This is literally us..");
 
+          // Transition the caption after another 4 seconds
           setTimeout(() => {
             typeEffect(largeCaption, "Anyways....");
 
+            // Transition back to the original images after another 4 seconds
             setTimeout(() => {
-              largePolaroidContainers.forEach(polaroid => {
-                const imgs = polaroid.querySelectorAll('.large-img');
-                imgs[1].classList.add('hidden');
-                imgs[0].classList.remove('hidden');
-              });
-              typeEffect(largeCaption, "Press one of the Polaroids bebu, oh and dww both of them have the same results");
-            }, 3000);
-          }, 3000);
-        }, 3000);
+              transitionImages(true);
+              typeEffect(largeCaption, "Large Caption");
+            }, 4000);
+          }, 4000);
+        }, 4000);
       }, 1200); 
     }, 500);
   });
@@ -70,7 +68,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
   function typeEffect(element, newText) {
-    // Clear existing text
     element.textContent = '';
     let index = 0;
     const interval = setInterval(() => {
@@ -82,4 +79,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     }, 100); 
   }
+
+  function transitionImages(reset = false) {
+    largePolaroidContainers.forEach(polaroid => {
+      const imgs = polaroid.querySelectorAll('img');
+      if (reset) {
+        imgs[1].classList.add('hidden');
+        imgs[0].classList.remove('hidden');
+      } else {
+        imgs[0].classList.add('hidden');
+        imgs[1].classList.remove('hidden');
+      }
+    });
+  }
 });
+
