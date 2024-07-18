@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 imgs[1].classList.add('hidden');
                 imgs[0].classList.remove('hidden');
               });
-              typeEffect(largeCaption, "Large Caption");
+              typeEffect(largeCaption, "Press one of the Polaroids bebu, oh and dww both of them have the same results");
             }, 3000);
           }, 3000);
         }, 3000);
