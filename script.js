@@ -72,25 +72,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let index = 0;
     const interval = setInterval(() => {
       if (index < newText.length) {
-        element.textContent += newText[index];
+        element.textContent += newText.charAt(index);
         index++;
       } else {
         clearInterval(interval);
       }
-    }, 100); 
+    }, 100);
   }
 
-  function transitionImages(reset = false) {
+  function transitionImages(reverse = false) {
     largePolaroidContainers.forEach(polaroid => {
-      const imgs = polaroid.querySelectorAll('img');
-      if (reset) {
-        imgs[1].classList.add('hidden');
-        imgs[0].classList.remove('hidden');
+      const images = polaroid.querySelectorAll('img');
+      if (reverse) {
+        images[0].classList.remove('hidden');
+        images[1].classList.add('hidden');
       } else {
-        imgs[0].classList.add('hidden');
-        imgs[1].classList.remove('hidden');
+        images[0].classList.add('hidden');
+        images[1].classList.remove('hidden');
       }
     });
   }
 });
-
