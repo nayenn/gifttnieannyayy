@@ -21,29 +21,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
       });
 
       setTimeout(() => {
-        typeEffect(largeCaption, "Look Bebuu", 4000, () => {
+        typeEffect(largeCaption, "Look Bebuu");
+
+        setTimeout(() => {
+          largePolaroidContainers.forEach(polaroid => {
+            const imgs = polaroid.querySelectorAll('.large-img');
+            imgs[0].classList.add('hidden');
+            imgs[1].classList.remove('hidden');
+          });
+          typeEffect(largeCaption, "This is literally us..");
+
           setTimeout(() => {
-            largePolaroidContainers.forEach(polaroid => {
-              const imgs = polaroid.querySelectorAll('.large-img');
-              imgs[0].classList.add('hidden');
-              imgs[1].classList.remove('hidden');
-            });
-            typeEffect(largeCaption, "This is literally us..", 4000, () => {
-              setTimeout(() => {
-                typeEffect(largeCaption, "Anyways....", 4000, () => {
-                  setTimeout(() => {
-                    largePolaroidContainers.forEach(polaroid => {
-                      const imgs = polaroid.querySelectorAll('.large-img');
-                      imgs[1].classList.add('hidden');
-                      imgs[0].classList.remove('hidden');
-                    });
-                    typeEffect(largeCaption, "Press one of the polaroids, it'll have the same result dww", 4000);
-                  }, 4000);
-                });
-              }, 4000);
-            });
-          }, 4000);
-        });
+            typeEffect(largeCaption, "Anyways....");
+
+            setTimeout(() => {
+              largePolaroidContainers.forEach(polaroid => {
+                const imgs = polaroid.querySelectorAll('.large-img');
+                imgs[1].classList.add('hidden');
+                imgs[0].classList.remove('hidden');
+              });
+              typeEffect(largeCaption, "Large Caption");
+            }, 3000);
+          }, 3000);
+        }, 3000);
       }, 1200); 
     }, 500);
   });
@@ -68,18 +68,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
 
-  function typeEffect(element, newText, duration, callback) {
+  function typeEffect(element, newText) {
     element.textContent = '';
     let index = 0;
-    const interval = duration / newText.length;
-    const typingInterval = setInterval(() => {
+    const interval = setInterval(() => {
       if (index < newText.length) {
         element.textContent += newText[index];
         index++;
       } else {
-        clearInterval(typingInterval);
-        if (callback) callback();
+        clearInterval(interval);
       }
-    }, interval);
+    }, 100); 
   }
 });
