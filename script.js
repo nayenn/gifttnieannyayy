@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         polaroid.parentNode.style.display = 'none';
         smallPolaroidContainer.style.display = 'flex';
         smallPolaroidButtons.forEach(button => {
-        button.style.display = 'block'; // Show the new buttons
+        smallPolaroidButtons.style.display = 'block';
         });
 
         setTimeout(() => {
