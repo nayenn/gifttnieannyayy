@@ -117,7 +117,7 @@ button.learn-more:active::before {
   overflow: hidden; 
 }
 
-#polaroid2, #polaroid4 {
+#polaroid3, #polaroid4 {
   top: 0;
   left: 0;
 }
