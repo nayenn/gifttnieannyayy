@@ -103,7 +103,7 @@ button.learn-more:active::before {
 
 .large-polaroid {
   width: 300px;
-  height: auto;
+  height: 400px; /* Adjusted height for polaroid frame visibility */
   opacity: 0;
 }
 
@@ -115,8 +115,6 @@ button.learn-more:active::before {
   white-space: nowrap; 
   overflow: hidden; 
 }
-
-
 
 .small-polaroid-container {
   display: none;
