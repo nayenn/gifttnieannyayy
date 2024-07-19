@@ -85,11 +85,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const images = polaroid.querySelectorAll('img');
       if (reverse) {
         images[0].classList.remove('hidden');
+        images[0].classList.add('visible');
+        images[1].classList.remove('visible');
         images[1].classList.add('hidden');
       } else {
+        images[0].classList.remove('visible');
         images[0].classList.add('hidden');
         images[1].classList.remove('hidden');
+        images[1].classList.add('visible');
       }
     });
   }
 });
+
