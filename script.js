@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const largeCaption = document.getElementById('large-caption-1');
   const smallPolaroidContainer = document.querySelector('.small-polaroid-container');
   const smallPolaroids = document.querySelectorAll('.small-polaroid-container .polaroid');
+  const smallPolaroidButtons = document.querySelectorAll('button.small-polaroid-button');
 
   largeCaption.textContent = '';
 
@@ -49,6 +50,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
       setTimeout(() => {
         polaroid.parentNode.style.display = 'none';
         smallPolaroidContainer.style.display = 'flex';
+        smallPolaroidButtons.forEach(button => {
+          button.style.display = 'block'; // Show the new buttons
+        });
 
         setTimeout(() => {
           smallPolaroids.forEach(smallPolaroid => {
@@ -91,3 +95,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   }
 });
+
