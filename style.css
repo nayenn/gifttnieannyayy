@@ -97,15 +97,13 @@ button.learn-more:active::before {
   opacity: 0;
 }
 
-.polaroid img.visible {
-  opacity: 1;
-}
-
 .polaroid:hover {
   transform: scale(1.05);
 }
 
 .large-polaroid {
+  width: 300px;
+  height: auto;
   opacity: 0;
 }
 
@@ -117,6 +115,8 @@ button.learn-more:active::before {
   white-space: nowrap; 
   overflow: hidden; 
 }
+
+
 
 .small-polaroid-container {
   display: none;
@@ -138,4 +138,5 @@ button.learn-more:active::before {
   right: 10px;
   color: #333;
 }
+
 
