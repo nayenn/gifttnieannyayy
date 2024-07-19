@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const smallPolaroidContainer = document.querySelector('.small-polaroid-container');
   const smallPolaroids = document.querySelectorAll('.small-polaroid-container .polaroid');
 
-  // Ensure the large caption is empty initially
   largeCaption.textContent = '';
 
   button.addEventListener('click', function() {
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     setTimeout(() => {
       this.style.display = 'none';
 
-      // Display the large polaroid container
       largePolaroidContainers.forEach(polaroid => {
         polaroid.parentNode.style.display = 'flex';
         setTimeout(() => {
@@ -23,20 +21,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }, 10);
       });
 
-      // Display the "Look Bebuu" caption
       setTimeout(() => {
         typeEffect(largeCaption, "Look Bebuu");
 
-        // Transition the images after 4 seconds
         setTimeout(() => {
           transitionImages();
           typeEffect(largeCaption, "This is literally us..");
 
-          // Transition the caption after another 4 seconds
           setTimeout(() => {
             typeEffect(largeCaption, "Anyways....");
 
-            // Transition back to the original images after another 4 seconds
             setTimeout(() => {
               transitionImages(true);
               typeEffect(largeCaption, "Large Caption");
@@ -97,4 +91,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   }
 });
-
