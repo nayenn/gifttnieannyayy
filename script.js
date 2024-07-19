@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             setTimeout(() => {
               transitionImages(true);
-              typeEffect(largeCaption, "Press one of the Polaroid Images bebu, and dw it doesn't matter which one u press it's gonna have the same result hihi...");
+              typeEffect(largeCaption, "Press one of the Polaroid Images bebu, and dw it doesn't matter which one u press it's gonna have the same result hihi");
             }, 4000);
           }, 4000);
         }, 4000);
