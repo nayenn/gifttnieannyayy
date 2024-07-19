@@ -74,11 +74,10 @@ button.learn-more:active::before {
   flex-direction: row;
   gap: 500px;
   text-align: center;
-  position: relative;
 }
 
 .polaroid {
-  position: absolute;
+  position: relative;
   padding: 10px 10px 30px;
   border: 1px solid #BFBFBF;
   background: white;
@@ -96,6 +95,9 @@ button.learn-more:active::before {
 
 .polaroid img.hidden {
   opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .polaroid:hover {
@@ -115,11 +117,6 @@ button.learn-more:active::before {
   margin-top: 20px;
   white-space: nowrap; 
   overflow: hidden; 
-}
-
-#polaroid3, #polaroid4 {
-  top: 0;
-  left: 0;
 }
 
 .small-polaroid-container {
@@ -142,4 +139,3 @@ button.learn-more:active::before {
   right: 10px;
   color: #333;
 }
-
