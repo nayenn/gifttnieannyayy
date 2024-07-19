@@ -72,7 +72,7 @@ button.learn-more:active::before {
 .large-polaroid-container {
   display: none;
   flex-direction: row;
-  gap: 50px; /* Adjust gap to control spacing between polaroids */
+  gap: 500px;
   text-align: center;
 }
 
@@ -91,9 +91,6 @@ button.learn-more:active::before {
   width: 100%;
   height: auto;
   transition: opacity 1s;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .polaroid img.hidden {
