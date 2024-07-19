@@ -108,10 +108,6 @@ button.learn-more:active::before {
   opacity: 0;
 }
 
-#polaroid2, #polaroid4 {
-  left: 0;
-}
-
 .large-caption {
   font-size: 1.2em;
   opacity: 1; 
@@ -119,6 +115,11 @@ button.learn-more:active::before {
   margin-top: 20px;
   white-space: nowrap; 
   overflow: hidden; 
+}
+
+#polaroid2, #polaroid4 {
+  top: 0;
+  left: 0;
 }
 
 .small-polaroid-container {
@@ -141,3 +142,4 @@ button.learn-more:active::before {
   right: 10px;
   color: #333;
 }
+
