@@ -4,11 +4,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const largeCaption = document.getElementById('large-caption-1');
   const smallPolaroidContainer = document.querySelector('.small-polaroid-container');
   const smallPolaroids = document.querySelectorAll('.small-polaroid-container .polaroid');
+  const smallCaption = document.getElementById('small-caption');
   const buttonContainer = document.querySelector('.button-container');
-  const finalContainer = document.querySelector('.final-container');
-  const finalPolaroids = document.querySelectorAll('.final-polaroid img');
-
+  const finalImages = document.querySelectorAll('.final-image');
+  
   largeCaption.textContent = '';
+  smallCaption.textContent = '';
 
   button.addEventListener('click', function() {
     this.style.transform = 'scale(0)';
@@ -59,27 +60,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
             smallPolaroid.style.height = 'auto';
             smallPolaroid.style.opacity = '1';
           });
+          typeEffect(smallCaption, "Here's something more...");
         }, 10);
       }, 500);
     });
   });
 
-  smallPolaroids.forEach(polaroid => {
-    polaroid.addEventListener('click', function() {
-      smallPolaroids.forEach(smallPolaroid => {
-        smallPolaroid.style.opacity = '0';
+  smallPolaroids.forEach(smallPolaroid => {
+    smallPolaroid.addEventListener('click', function() {
+      smallPolaroids.forEach(sp => {
+        sp.style.opacity = '0';
       });
+      smallCaption.style.opacity = '0';
 
       setTimeout(() => {
         smallPolaroidContainer.style.display = 'none';
+        finalImages.forEach(finalImage => {
+          finalImage.style.display = 'block';
+        });
         buttonContainer.style.display = 'flex';
-
-        setTimeout(() => {
-          finalContainer.style.display = 'flex';
-          finalPolaroids.forEach(finalPolaroid => {
-            finalPolaroid.style.opacity = '1';
-          });
-        }, 10);
       }, 500);
     });
   });
