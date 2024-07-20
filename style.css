@@ -105,7 +105,6 @@ button.learn-more:active::before {
   width: 300px;
   height: auto;
   opacity: 0;
-  position: absolute;
 }
 
 .large-caption {
@@ -122,6 +121,8 @@ button.learn-more:active::before {
   flex-direction: row;
   gap: 200px;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .small-polaroid-container .polaroid {
@@ -130,27 +131,32 @@ button.learn-more:active::before {
   opacity: 0;
 }
 
-.caption {
+.small-caption {
   font-size: 1em;
-  opacity: 1; 
   text-align: center;
   margin-top: 20px;
   white-space: nowrap; 
   overflow: hidden; 
-  position: relative;
-  bottom: 20px;
-  left: 0;
-  right: 0;
+  opacity: 0;
 }
 
-.button-container {
-  display: none;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: center;
+.caption {
   position: absolute;
-  bottom: 50px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  color: #333;
 }
+
+button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  bottom: 40px; 
+}
+
 
 button.small-button {
   font-weight: 600;
