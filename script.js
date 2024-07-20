@@ -71,9 +71,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
 
-  smallPolaroids.forEach(polaroid => {
-    polaroid.addEventListener('click', function() {
-      window.location.href = 'newPage.html';
+  smallPolaroids.forEach(smallPolaroid => {
+    smallPolaroid.addEventListener('click', function() {
+      smallPolaroids.forEach(sp => {
+        sp.style.opacity = '0';
+      });
+      smallCaption.style.opacity = '0';
+
+      setTimeout(() => {
+        smallPolaroidContainer.style.display = 'none';
+        finalImages.forEach(finalImage => {
+          finalImage.style.display = 'block';
+        });
+        buttonContainer.style.display = 'flex';
+      }, 500);
     });
   });
 
