@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             smallPolaroid.style.width = '300px';
             smallPolaroid.style.height = 'auto';
             smallPolaroid.style.opacity = '1';
-            const smallCaption = smallPolaroid.querySelector('.small-caption');
+          const smallCaption = smallPolaroid.querySelector('.small-caption');
             if (smallCaption) {
               typeEffect(smallCaption, `Small Caption ${index + 1}`);
           });
