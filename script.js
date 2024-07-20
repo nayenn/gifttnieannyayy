@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const largeCaption = document.getElementById('large-caption-1');
   const smallPolaroidContainer = document.querySelector('.small-polaroid-container');
   const smallPolaroids = document.querySelectorAll('.small-polaroid-container .polaroid');
-  const smallPolaroidButtons = document.querySelectorAll('button.small-polaroid-button');
+  const buttonContainer = document.querySelector('.button-container');
+  const finalContainer = document.querySelector('.final-container');
+  const finalPolaroids = document.querySelectorAll('.final-polaroid img');
 
   largeCaption.textContent = '';
 
@@ -50,9 +52,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       setTimeout(() => {
         polaroid.parentNode.style.display = 'none';
         smallPolaroidContainer.style.display = 'flex';
-        smallPolaroidButtons.forEach(button => {
-        button.style.display = 'block';
-        });
 
         setTimeout(() => {
           smallPolaroids.forEach(smallPolaroid => {
@@ -65,7 +64,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
 
-  
+  smallPolaroids.forEach(polaroid => {
+    polaroid.addEventListener('click', function() {
+      smallPolaroids.forEach(smallPolaroid => {
+        smallPolaroid.style.opacity = '0';
+      });
+
+      setTimeout(() => {
+        smallPolaroidContainer.style.display = 'none';
+        buttonContainer.style.display = 'flex';
+
+        setTimeout(() => {
+          finalContainer.style.display = 'flex';
+          finalPolaroids.forEach(finalPolaroid => {
+            finalPolaroid.style.opacity = '1';
+          });
+        }, 10);
+      }, 500);
+    });
+  });
 
   function typeEffect(element, newText) {
     element.textContent = '';
@@ -97,4 +114,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   }
 });
-
